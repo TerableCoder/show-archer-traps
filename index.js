@@ -10,16 +10,16 @@ module.exports = function ShowArcherTraps(dispatch) {
     
     let gameId = 0;
     
-    dispatch.hook('S_LOGIN', 9, event => {
-        gameId = event.gameId
+    dispatch.hook('S_LOGIN', 12, event => {
+        gameId = event.gameId;
     })
     
-    dispatch.hook('S_SPAWN_PROJECTILE', 3, (event) => {
-        if(gameId.equals(event.gameId)) return;
-        if(TrapSkills.includes(event.skill)) {
+    dispatch.hook('S_SPAWN_PROJECTILE', 5, (event) => {
+        if(gameId == (event.gameId)) return;
+        if(TrapSkills.includes(event.skill)){
             event.gameId = gameId;
             return true;
         }
-     });
+    });
     
  }
