@@ -1,0 +1,8 @@
+{
+    "disableAutoUpdate": false,
+    "name": "show-archer-traps",
+    "author": "teralove / TerableCoder",
+    "description": "Archer traps are no longer invisible",
+    "version": "2",
+    "servers": ["https://raw.githubusercontent.com/TerableCoder/show-archer-traps/master/"]
+}
