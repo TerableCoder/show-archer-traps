@@ -1,4 +1,5 @@
 module.exports = function ShowArcherTraps(mod) {
+	mod.game.initialize(["me"]);
 
     const TrapSkills = [
         150720,//fire
@@ -9,11 +10,10 @@ module.exports = function ShowArcherTraps(mod) {
     ];
     
     mod.hook('S_SPAWN_PROJECTILE', 5, (event) => {
-        if(mod.game.me.gameId == (event.gameId)) return;
+        if(mod.game.me.is(event.gameId)) return;
         if(TrapSkills.includes(event.skill.id)){
             event.gameId = mod.game.me.gameId;
             return true;
         }
     });
-    
  }
